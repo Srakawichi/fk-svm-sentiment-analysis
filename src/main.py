@@ -15,8 +15,12 @@ def main():
     print("tokens were created successfully...")
     dict = text_processor.count_tokens_frequency(token_list)
     print("Token frequency counted successfully...")
-    print(dict)
-
+    sorted_tokens_list = text_processor.sort_tokens(dict)
+    print("Dictionary is sorted descending...")
+    index2word = text_processor.index_to_word(sorted_tokens_list)
+    word2index = text_processor.word_to_index(sorted_tokens_list)
+    print("word/index lists created successfully...")
+    print(sorted_tokens_list[:100])
 
 
 
