@@ -7,6 +7,9 @@ class Text_prep():
 
     def to_lowercase(self, text):
         return text.lower()
+    
+    def remove_urls(self, text):
+        return ' '.join(word for word in text.split() if not word.startswith('http') and not word.startswith('www') and not word.startswith('https') and not word.endswith('.com'))
 
     def remove_punctuation(self, text):
         return text.translate(str.maketrans('', '', string.punctuation))
@@ -16,6 +19,7 @@ class Text_prep():
 
     def preprocess(self, text):
         text = self.to_lowercase(text)
+        text = self.remove_urls(text)
         text = self.remove_punctuation(text)
         return self.tokenize(text)
     
