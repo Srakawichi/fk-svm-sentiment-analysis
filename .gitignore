@@ -1,0 +1,17 @@
+# py venv
+venv/
+
+# cache files
+__pycache__/
+*.pyc
+
+# test files
+example.txt
+
+# IDE files
+.vscode/idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
