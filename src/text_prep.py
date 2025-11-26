@@ -15,14 +15,14 @@ class Text_prep():
         return text.split()
 
     def preprocess(self, text):
-        self.to_lowercase(text)
-        self.remove_punctuation(text)
+        text = self.to_lowercase(text)
+        text = self.remove_punctuation(text)
         return self.tokenize(text)
     
     def preprocess_list(self):
         all_tokens = []
-        for item in self.text:
-            tokens = self.preprocess(item)
+        for tweet in self.text:
+            tokens = self.preprocess(tweet)
             all_tokens.append(tokens)
         return all_tokens
     
