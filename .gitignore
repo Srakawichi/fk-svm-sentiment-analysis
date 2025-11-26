@@ -8,6 +8,10 @@ __pycache__/
 # test files
 example.txt
 
+# Data files
+data/
+results/
+
 # IDE files
 .vscode/idea/
 *.iml
