@@ -5,16 +5,30 @@ class Text_prep():
     def __init__(self, text):
         self.text = text
 
-    def to_lowercase(self):
-        self.text = self.text.lower()
+    def to_lowercase(self, text):
+        return text.lower()
 
-    def remove_punctuation(self):
-        self.text = self.text.translate(str.maketrans('', '', string.punctuation))
+    def remove_punctuation(self, text):
+        return text.translate(str.maketrans('', '', string.punctuation))
 
-    def tokenize(self):
-        return self.text.split()
+    def tokenize(self, text):
+        return text.split()
 
-    def preprocess(self):
-        self.to_lowercase()
-        self.remove_punctuation()
-        return self.tokenize()
+    def preprocess(self, text):
+        self.to_lowercase(text)
+        self.remove_punctuation(text)
+        return self.tokenize(text)
+    
+    def preprocess_list(self):
+        all_tokens = []
+        for item in self.text:
+            tokens = self.preprocess(item)
+            all_tokens.append(tokens)
+        return all_tokens
+    
+    def count_tokens_frequency(self, token_list):
+        frequency = {}
+        for tweet in token_list:
+            for token in tweet:
+                frequency[token] = frequency.get(token, 0) + 1
+        return frequency
