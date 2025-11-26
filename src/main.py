@@ -29,7 +29,7 @@ def load_file(file_path):
                 names=['polarity', 'text'],
                 encoding='latin-1')
 
-    content = df['text'].tolist()
+    content = df["text"].fillna("").astype(str).tolist()
     return content
 
 
