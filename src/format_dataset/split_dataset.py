@@ -25,5 +25,5 @@ print(f"Test set size: {len(test_df)} | {test_df.polarity.value_counts()}")
 
 # save the datasets
 train_df.to_csv("data/train/sentiment140-train.csv", index=False)
-val_df.to_csv("data/valid/sentiment140-val.csv", index=False)
+val_df.to_csv("data/val/sentiment140-val.csv", index=False)
 test_df.to_csv("data/test/sentiment140-test.csv", index=False)
