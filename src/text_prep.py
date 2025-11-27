@@ -43,10 +43,4 @@ class Text_prep():
         sorted_tokens = sorted(dict.items(), key=lambda item: item[1], reverse=True)
         sorted_tokens = sorted_tokens[:V] # keep only the top V tokens
         return sorted_tokens
-    
-    def word_to_index(self, list):
-       return {token: i for i, (token, _) in enumerate(list)}
-    
-    def index_to_word(self, list):
-        return [token for token, _ in list]
 
